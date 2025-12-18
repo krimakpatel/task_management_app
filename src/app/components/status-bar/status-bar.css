@@ -1,0 +1,19 @@
+.numberBadge {
+    color: white;
+    padding: 3px;
+    border-radius: 10px;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 14px;
+}
+.green {
+    background-color: green;
+}
+.blue {
+    background-color: blue;
+}
+.red {
+    background-color: red;
+}
