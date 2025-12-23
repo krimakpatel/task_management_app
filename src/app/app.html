@@ -2,4 +2,14 @@
 
 <app-status-bar />
 
-<app-task-list />
+<div class="my-3 d-flex flex-row-reverse">
+    <button (click)="addNewTask()" type="button" class="btn btn-info">
+        Add New Task
+    </button>
+</div>
+
+<app-task-list (onStatusSelect)="handleStatusSelect($event)" />
+
+@if(isPanelVisible) {
+    <app-status-panel [task]="currentSelectedTask()" (onStatusClose)="handleClose()" />
+}

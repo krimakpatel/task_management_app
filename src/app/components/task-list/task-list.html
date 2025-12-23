@@ -1,22 +1,10 @@
 <ul class="list-group">
-    <li class="list-group-item d-flex justify-content-between align">
-        TASK
-        <span class="status">
-            STATUS
+    @for(task of tasks(); track task.id) {
+    <li (click)="changeStatus(task)" class="list-group-item d-flex justify-content-between align">
+        {{task.task}}
+        <span [class]="getTaskStatus(task.status)" class="status">
+            {{task.status}}
         </span>
     </li>
-
-    <li class="list-group-item d-flex justify-content-between align">
-        TASK
-        <span class="status">
-            STATUS
-        </span>
-    </li>
-
-    <li class="list-group-item d-flex justify-content-between align">
-        TASK
-        <span class="status">
-            STATUS
-        </span>
-    </li>
+    }
 </ul>

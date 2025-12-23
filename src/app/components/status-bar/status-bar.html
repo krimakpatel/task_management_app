@@ -2,14 +2,14 @@
     <span>Task Status: </span>
 
     <span>
-        DONE: <span class="numberBadge green"> 0 </span>
+        DONE: <span class="numberBadge green"> {{status().done}} </span>
     </span>
     <span>
         In Progress: 
-        <span class="numberBadge blue"> 0 </span>
+        <span class="numberBadge blue"> {{status().inProgress}} </span>
     </span>
     <span>
         Not Started:
-        <span class="numberBadge red"> 0 </span>
+        <span class="numberBadge red"> {{status().notStarted}} </span>
     </span>
 </div>

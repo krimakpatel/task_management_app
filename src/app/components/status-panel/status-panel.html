@@ -1,1 +1,26 @@
-<p>status-panel works!</p>
+<div class="my-3">
+  <div class="card">
+    <div class="card-header d-flex justify-content-between">
+      <span>{{isUpdateMode() ? 'Update' : 'Add'}} task</span>
+      <span (click)="onClose()">X</span>
+    </div>
+    <div class="card-body">
+        @if(isUpdateMode()) {
+            <label class="form-label mt-2 mr-2"> Current task: {{task()?.task}} </label>
+      <div class="d-flex justify-content-between">
+        <select (change)="handleSelectChange($event)" [value]="task()?.status" class="form-select">
+          <option value="IN_PROGRESS">IN PROGRESS</option>
+          <option value="DONE">DONE</option>
+          <option value="NOT_STARTED">NOT STARTED</option>
+        </select>
+        <button (click)="updateStatus()" class="btn btn-info btn-sm">Update</button>
+      </div>
+        } @else {
+            <div class="d-flex justify-content-between">
+                <input #inputRef type="text" class="form-control" />
+                <button (click)="onAdd(inputRef.value)" class="btn btn-info btn-sm">Add</button>
+            </div>
+        }
+    </div>
+  </div>
+</div>

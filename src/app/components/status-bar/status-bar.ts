@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { Tasks } from '../../services/tasks';
 
 @Component({
   selector: 'app-status-bar',
@@ -7,5 +8,6 @@ import { Component } from '@angular/core';
   styleUrl: './status-bar.css',
 })
 export class StatusBar {
-
+  taskService = inject(Tasks);
+  status = this.taskService.getComputedTaskStatus;
 }
